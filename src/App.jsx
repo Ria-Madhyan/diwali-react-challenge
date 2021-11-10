@@ -8,13 +8,13 @@ const App = () => {
   useEffect(() => {
     fetch('https://api.adviceslip.com/advice')
       .then(res => res.json())
-      .then(data => setAdvice(data))      
+      .then(data => (setAdvice(data)))      
       .catch(err => console.log(err))
   }, [changeAdvice]);
 
   return (
     <>
-    <button onClick={() => setChangeAdvice(!changeAdvice)}>Click Me</button>
+    <button onClick={() => setChangeAdvice(!changeAdvice)}>Click here to get Optimistic Advices</button>
     {advice && <Advices data={advice}/>}
     
     </>
